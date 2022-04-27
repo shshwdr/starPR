@@ -5,7 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Dialogue System Extras/Textline/Lobby Example/0 Lobby.unity
+    guid: 43d7b028f4f9b7f44b44d24839f44a15
+  - enabled: 0
+    path: Assets/Dialogue System Extras/Textline/Lobby Example/1 Gameplay.unity
+    guid: 4877a6551a812c54f8151f8fb711730f
+  - enabled: 1
+    path: Assets/Scenes/wechat lobby.unity
+    guid: 16910ac533b76564f89cdbcf86d63f29
+  - enabled: 1
+    path: Assets/Scenes/wechat dialogue.unity
+    guid: eec413a8380784e41b6b37241b361b30
+  - enabled: 1
+    path: Assets/Scenes/weibo lobby.unity
+    guid: 6c6b4321334da4f4491380885331d783
   m_configObjects: {}
