@@ -111,6 +111,16 @@ public class Utils : MonoBehaviour
         return (T)values.GetValue(random);
     }
 
+    public static T randomList<T>(List<T> list)
+    {
+        if(list.Count == 0)
+        {
+            Debug.LogError("list is empty");
+            return default(T);
+        }
+        return list[Random.Range(0,list.Count)];
+    }
+
     public static int enumLength<T>()
     {
         var values = System.Enum.GetValues(typeof(T));

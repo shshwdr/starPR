@@ -1083,7 +1083,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u53BB\u5FAE\u535A\u641C\u7D22\u201C\u4F55\u5FAE\u7B11\u201D\uFF0C\u7136\u540E\u770B\u770B\u5927\u5BB6\u7684\u8BC4\u8BBA\uFF0C\u7ED9\u5938\u4ED6\u7684\u70B9\u8D5E"
+        value: "\u53BB\u5FAE\u535A\u641C\u7D22\u201C\u4F55\u5FAE\u7B11\u201D\uFF0C\u7136\u540E\u770B\u770B\u5927\u5BB6\u7684\u8BC4\u8BBA\uFF0C\u7ED9\u5938\u4ED6\u7684\u652F\u6301\u4ED6\u7684\u70B9\u8D5E"
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -1158,7 +1158,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u4E0D\u662F\u5938\u4ED6\u7684\u5C31\u4E0D\u8981\u70B9\u4E86\uFF0C\u5FAE\u535A\u4E00\u6BB5\u65F6\u95F4\u5185\u7684\u70B9\u8D5E\u6570\u662F\u6709\u9650\u5236\u7684\uFF0C\u8981\u628A\u70B9\u8D5E\u7528\u5728\u5200\u5203\u4E0A\uFF01"
+        value: "\u5176\u4ED6\u7684\u5C31\u4E0D\u8981\u70B9\u4E86\uFF0C\u4EBA\u7684\u7CBE\u529B\u662F\u6709\u9650\u7684\uFF0C\u8981\u628A\u65F6\u95F4\u7528\u5728\u5200\u5203\u4E0A\uFF01"
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -1426,8 +1426,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 242.85693}
-    canvasZoom: 0.49000046
+    canvasScrollPosition: {x: 0, y: 421.3096}
+    canvasZoom: 0.43000045
   - id: 2
     fields:
     - title: Title

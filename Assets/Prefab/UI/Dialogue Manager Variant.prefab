@@ -55,6 +55,22 @@ PrefabInstance:
       propertyPath: displaySettings.dialogueUI
       value: 
       objectReference: {fileID: 7363343052524906001}
+    - target: {fileID: 11414744, guid: c7bb0201a29929d40ae03537d0184175, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414744, guid: c7bb0201a29929d40ae03537d0184175, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414744, guid: c7bb0201a29929d40ae03537d0184175, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414744, guid: c7bb0201a29929d40ae03537d0184175, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1334
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7bb0201a29929d40ae03537d0184175, type: 3}
 --- !u!224 &7361935011201895352 stripped
