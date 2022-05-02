@@ -1,3 +1,4 @@
+using PixelCrushers.DialogueSystem;
 using Pool;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,6 +20,11 @@ public class ResourceManager : Singleton<ResourceManager>
     {
         resources[ResourceType.fans] += addCount;
         EventPool.Trigger("updateFans");
+        if (resources[ResourceType.fans] >= 101)
+        {
+            Sequencer.Message("FansCount_101");
+        }
+        DialogueLua.SetVariable("fansCount", resources[ResourceType.fans]);
     }
 
     public void consumeHP(float value)
@@ -52,6 +58,8 @@ public class ResourceManager : Singleton<ResourceManager>
         {
             resources[type] = 100;
         }
+        EventPool.Trigger("updateFans");
+        EventPool.Trigger("updateHP");
     }
     int moneyChangePerTick = 1;
     int timePerTick = 1;
@@ -64,6 +72,11 @@ public class ResourceManager : Singleton<ResourceManager>
         {
             currentTime = 0;
             changeMoney(moneyChangePerTick);
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            addFansCount(1);
         }
     }
 }

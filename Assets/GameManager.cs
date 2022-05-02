@@ -15,12 +15,12 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
 
-            Sequencer.Message("FansCount_10");
-            Sequencer.Message("FansCount_100");
-            DialogueManager.PlaySequence("SendMessage(FansCount_10, , everyone)");
-        }
+        //    Sequencer.Message("FansCount_10");
+        //    Sequencer.Message("FansCount_100");
+        //    DialogueManager.PlaySequence("SendMessage(FansCount_10, , everyone)");
+        //}
     }
 }

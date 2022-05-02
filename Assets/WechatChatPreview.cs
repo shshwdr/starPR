@@ -10,6 +10,9 @@ public class WechatChatPreview : MonoBehaviour
     TMP_Text previewLabel;
     [SerializeField]
     string conversationName;
+
+    [SerializeField]
+    GameObject newMessageObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,22 +24,45 @@ public class WechatChatPreview : MonoBehaviour
     IEnumerator loadLastSentence()
     {
         yield return new WaitForSecondsRealtime(0.1f);
-        previewLabel.text = getLastSentence();
+        //previewLabel.text = getLastSentence();
+        //newMessageObject.SetActive(hasMoreConversation());
     }
 
     string getLastSentence()
     {
-        var s = DialogueLua.GetVariable("DialogueEntryRecords_"+ conversationName).asString; // Assumes Use Conversation Variable is UNticked.
-        if (s== null)
+        var entry = getLastEntry();
+        if (entry == null)
         {
             return "";
+        }
+        return entry.DialogueText;
+    }
+
+    DialogueEntry getLastEntry()
+    {
+        var s = DialogueLua.GetVariable("DialogueEntryRecords_" + conversationName).asString;
+        if (s == "nil")
+        {
+            return null;
         }
         string[] ints = s.Split(';');
         int conversationID = Tools.StringToInt(ints[ints.Length - 3]);
         int entryID = Tools.StringToInt(ints[ints.Length - 2]);
         DialogueEntry entry = DialogueManager.masterDatabase.GetDialogueEntry(conversationID, entryID);
-        Debug.Log("Last sentence was: " + entry.DialogueText);
-        return entry.DialogueText;
+        return entry;
+    }
+
+    bool hasMoreConversation()
+    {
+        var entry = getLastEntry();
+        if(entry == null)
+        {
+            return true;
+        }
+        var model = new ConversationModel(DialogueManager.masterDatabase, DialogueManager.masterDatabase.GetConversation(entry.conversationID).Title, null, null, false, null);
+        var state = model.GetState(entry, true);
+        var isThereMore = state.hasAnyResponses;
+        return isThereMore;
     }
 
     // Update is called once per frame

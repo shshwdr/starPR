@@ -15,11 +15,14 @@ public class ResourceHeaderView : MonoBehaviour
     Text money;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         EventPool.OptIn("updateFans", updateFans);
         EventPool.OptIn("updateHP", updateHP);
         EventPool.OptIn("updateMoney", updateMoney);
+        updateFans();
+        updateHP();
+        updateMoney();
     }
 
     void updateFans()
