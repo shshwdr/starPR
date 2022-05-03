@@ -1,10 +1,11 @@
-using Pool;
+﻿using Pool;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WeiboContentsView : MonoBehaviour
 {
+    string keyWords = "何微笑";
     OneWeiboCell[] weiboCells;
 
     // Start is called before the first frame update
@@ -14,9 +15,15 @@ public class WeiboContentsView : MonoBehaviour
         EventPool.OptIn("updateWeibos", updateWeibos);
     }
 
+    public void updateKeyWords(string _key)
+    {
+        keyWords = _key;
+        updateWeibos();
+    }
+
     void updateWeibos()
     {
-        var currentWeibos = WeiboManager.Instance.CurrentWeibos;
+        var currentWeibos = WeiboManager.Instance.CurrentWeibosWithKeyWords(keyWords);
         int i = 0;
         for (; i < Mathf.Min( currentWeibos.Count, weiboCells.Length); i++)
         {

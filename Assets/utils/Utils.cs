@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Utils : MonoBehaviour
@@ -119,6 +120,17 @@ public class Utils : MonoBehaviour
             return default(T);
         }
         return list[Random.Range(0,list.Count)];
+    }
+
+    public static T randomHashSet<T>(HashSet<T> set)
+    {
+        if(set.Count == 0)
+        {
+            Debug.LogError("set is empty");
+            return default(T);
+
+        }
+        return set.ElementAt(Random.Range(0,set.Count));
     }
 
     public static int enumLength<T>()
