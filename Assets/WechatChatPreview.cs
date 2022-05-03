@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WechatChatPreview : MonoBehaviour
 {
@@ -21,10 +22,26 @@ public class WechatChatPreview : MonoBehaviour
         StartCoroutine( loadLastSentence());
     }
 
+    public void selectDialogue()
+    {
+
+        //DialogueLua.SetVariable("Conversation", "Adam");
+        Sequencer.Message("SetVariable(Conversation,Adam);LoadLevel(wechat dialogue)");
+        //SceneManager.LoadScene("wechat dialogue");
+        //Sequencer.Message("LoadLevel(wechat dialogue)");
+        //StartCoroutine(test());
+    }
+    IEnumerator test()
+    {
+        yield return new WaitForSecondsRealtime(0.1f);
+
+        SceneManager.LoadScene("wechat dialogue");
+    }
+
     IEnumerator loadLastSentence()
     {
         yield return new WaitForSecondsRealtime(0.1f);
-        //previewLabel.text = getLastSentence();
+        previewLabel.text = getLastSentence();
         //newMessageObject.SetActive(hasMoreConversation());
     }
 

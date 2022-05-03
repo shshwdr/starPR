@@ -20,10 +20,6 @@ public class ResourceManager : Singleton<ResourceManager>
     {
         resources[ResourceType.fans] += addCount;
         EventPool.Trigger("updateFans");
-        if (resources[ResourceType.fans] >= 101)
-        {
-            Sequencer.Message("FansCount_101");
-        }
         DialogueLua.SetVariable("fansCount", resources[ResourceType.fans]);
     }
 

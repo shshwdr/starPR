@@ -288,7 +288,7 @@ MonoBehaviour:
       - originConversationID: 1
         originDialogueID: 0
         destinationConversationID: 1
-        destinationDialogueID: 13
+        destinationDialogueID: 1
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -345,7 +345,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: EventSend(unlockWeibo)
         type: 0
         typeString: CustomFieldType_Text
       - title: es
@@ -1284,6 +1284,12 @@ MonoBehaviour:
         destinationDialogueID: 18
         isConnector: 0
         priority: 2
+      - originConversationID: 1
+        originDialogueID: 13
+        destinationConversationID: 1
+        destinationDialogueID: 17
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -1291,8 +1297,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 693.30273
-        y: 426.13623
+        x: 689.6663
+        y: 509.77252
         width: 160
         height: 30
     - id: 14
@@ -1338,7 +1344,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: WaitForMessage(test2)
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       - title: es
@@ -1366,8 +1372,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 819.7799
-        y: 644.5371
+        x: 847.0526
+        y: 699.0825
         width: 160
         height: 30
     - id: 15
@@ -1541,7 +1547,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u52A0\u6CB9"
+        value: "\u52A0\u6CB9\uFF0C\u7C89\u4E1D\u6570\u5230\u8FBE110\u65F6\u518D\u6765\u627E\u6211\u3002"
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -1557,7 +1563,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: WaitForMessage(FansCount_101)
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       - title: es
@@ -1575,7 +1581,7 @@ MonoBehaviour:
       - originConversationID: 1
         originDialogueID: 17
         destinationConversationID: 1
-        destinationDialogueID: 14
+        destinationDialogueID: 13
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1585,8 +1591,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 646.5698
-        y: 539.7725
+        x: 632.4976
+        y: 590.6816
         width: 160
         height: 30
     - id: 18
@@ -1660,13 +1666,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 937.47864
-        y: 527.9544
+        x: 1055.6603
+        y: 586.13617
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 107.272644, y: 329.09064}
-    canvasZoom: 0.5500004
+    canvasScrollPosition: {x: 42.622925, y: 0}
+    canvasZoom: 0.6100004
   - id: 2
     fields:
     - title: Title
