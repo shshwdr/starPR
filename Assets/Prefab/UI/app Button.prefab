@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 259123513510423291}
   - component: {fileID: 259123513510423288}
   m_Layer: 5
-  m_Name: Weixin Button
+  m_Name: app Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

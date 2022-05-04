@@ -26,7 +26,9 @@ public class WechatChatPreview : MonoBehaviour
     {
 
         //DialogueLua.SetVariable("Conversation", "Adam");
-        Sequencer.Message("SetVariable(Conversation,Adam);LoadLevel(wechat dialogue)");
+        DialogueLua.SetVariable("Conversation", conversationName);
+        PixelCrushers.SaveSystem.LoadScene("wechat dialogue");
+        //Sequencer.Message("SetVariable(Conversation,Adam);LoadLevel(wechat dialogue)");
         //SceneManager.LoadScene("wechat dialogue");
         //Sequencer.Message("LoadLevel(wechat dialogue)");
         //StartCoroutine(test());
@@ -63,6 +65,10 @@ public class WechatChatPreview : MonoBehaviour
             return null;
         }
         string[] ints = s.Split(';');
+        if(ints.Length - 3 < 0)
+        {
+            return null;
+        }
         int conversationID = Tools.StringToInt(ints[ints.Length - 3]);
         int entryID = Tools.StringToInt(ints[ints.Length - 2]);
         DialogueEntry entry = DialogueManager.masterDatabase.GetDialogueEntry(conversationID, entryID);
