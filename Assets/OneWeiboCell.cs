@@ -40,7 +40,7 @@ public class OneWeiboCell : MonoBehaviour
     public void updateWeiboCell()
     {
         userName.text = weiboInfo.userName;
-        word.text = weiboInfo.word;
+        word.text = "<link=\"id\">"+weiboInfo.word+"</link>";
         likedCount.text = (weiboInfo.likes + (isLiking ? 1 : 0)).ToString();
     }
 
