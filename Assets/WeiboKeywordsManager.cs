@@ -1,3 +1,4 @@
+﻿using Pool;
 using Sinbad;
 using System.Collections;
 using System.Collections.Generic;
@@ -44,9 +45,20 @@ public class WeiboKeywordsManager : Singleton<WeiboKeywordsManager>
 
     }
 
-    public void addKeywordCount(int i)
+    public void addKeywordCount(string keyword)
     {
-        //when unlock new one, add some weibo about it
+        GameObject.FindObjectOfType<WeiboCenterPopup>().addMessage(keyword + "+1");
+        keywordCountByName[keyword]++;
+        if(keywordCountByName[keyword]>= keywordInfoByName[keyword].unlockCount)
+        {
+            unlockedKeywords.Add(keyword);
+            lockedKeywords.Remove(keyword);
+
+            GameObject.FindObjectOfType<WeiboCenterPopup>().addMessage("解锁"+keyword);
+            EventPool.Trigger("addOption", keyword);
+            EventPool.Trigger("updateWeibos");
+        }
+ 
     }
 
 

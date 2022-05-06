@@ -31,6 +31,7 @@ public class InteractiveWeiboContent : MonoBehaviour, IPointerClickHandler
 
             TMP_LinkInfo linkInfo = m_TextMeshPro.textInfo.linkInfo[linkIndex];
             Debug.Log("link click " + linkInfo.GetLinkText() +" id "+ linkInfo.GetLinkID());
+            WeiboKeywordsManager.Instance.addKeywordCount(linkInfo.GetLinkText());
         }
     }
 }
