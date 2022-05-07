@@ -1,4 +1,5 @@
-﻿using Pool;
+﻿using PixelCrushers.DialogueSystem;
+using Pool;
 using Sinbad;
 using System.Collections;
 using System.Collections.Generic;
@@ -54,6 +55,7 @@ public class WeiboKeywordsManager : Singleton<WeiboKeywordsManager>
             unlockedKeywords.Add(keyword);
             lockedKeywords.Remove(keyword);
 
+            DialogueLua.SetVariable("keywordsCount", unlockedKeywords.Count);
             GameObject.FindObjectOfType<WeiboCenterPopup>().addMessage("解锁"+keyword);
             EventPool.Trigger("addOption", keyword);
             EventPool.Trigger("updateWeibos");

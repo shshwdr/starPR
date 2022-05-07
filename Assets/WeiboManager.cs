@@ -16,6 +16,12 @@ public class OneWeiboInfo
 
 public class WeiboManager : Singleton<WeiboManager>
 {
+
+    float weiboMaxCount = 50f;
+    float weiboAddTime = 5f;
+    float weiboAddTimer = 0;
+    int weiboCount = 0;
+
     List<OneWeiboInfo> currentWeibos = new List<OneWeiboInfo>();
     Dictionary<string, HashSet<OneWeiboInfo>> currentWeibosWithKeywords = new Dictionary<string, HashSet<OneWeiboInfo>>();
     public List<OneWeiboInfo> CurrentWeibos { get { return currentWeibos; } }
@@ -29,7 +35,11 @@ public class WeiboManager : Singleton<WeiboManager>
     }
     public void removeWeibo(OneWeiboInfo info)
     {
-        currentWeibos.Remove(info);
+        foreach(var key in info.keywords)
+        {
+            currentWeibosWithKeywords[key].Remove(info);
+        }
+        weiboCount--;
         EventPool.Trigger("updateWeibos");
     }
     public OneWeiboInfo getOneWeibo()
@@ -55,10 +65,11 @@ public class WeiboManager : Singleton<WeiboManager>
         {
             if (res.word.Contains(lockedKey))
             {
+                res.keywords.Add(lockedKey);
                 currentWeibosWithKeywords[lockedKey].Add(res);
             }
         }
-
+        weiboCount++;
         return res;
     }
 
@@ -68,6 +79,8 @@ public class WeiboManager : Singleton<WeiboManager>
         {
             currentWeibos.Add(getOneWeibo());
         }
+        
+        EventPool.Trigger("updateWeibos");
     }
     // Start is called before the first frame update
     void Start()
@@ -76,8 +89,7 @@ public class WeiboManager : Singleton<WeiboManager>
         {
             currentWeibosWithKeywords[keyword.keyword] = (new HashSet<OneWeiboInfo>());
         }
-        spawnWeibos(20);
-        EventPool.Trigger("updateWeibos");
+        spawnWeibos(10);
 
 
     }
@@ -85,6 +97,14 @@ public class WeiboManager : Singleton<WeiboManager>
     // Update is called once per frame
     void Update()
     {
-        
+        if (weiboCount < weiboMaxCount)
+        {
+            weiboAddTimer += Time.deltaTime;
+            if (weiboAddTimer >= weiboAddTime)
+            {
+                spawnWeibos(1);
+                weiboAddTimer = 0;
+            }
+        }
     }
 }

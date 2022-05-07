@@ -13,6 +13,7 @@ public class WeiboContentsView : MonoBehaviour
     {
         weiboCells = GetComponentsInChildren<OneWeiboCell>(true);
         EventPool.OptIn("updateWeibos", updateWeibos);
+        updateWeibos();
     }
 
     public void updateKeyWords(string _key)
