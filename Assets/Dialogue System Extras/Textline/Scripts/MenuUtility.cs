@@ -55,8 +55,15 @@ namespace PixelCrushers.DialogueSystem.MenuSystem
             StartCoroutine(ReturnToTitleWhenDoneSaving());
         }
 
-        private IEnumerator ReturnToTitleWhenDoneSaving()
+        public void save()
         {
+
+            StartCoroutine(save_enumerator());
+        }
+
+        public IEnumerator save_enumerator()
+        {
+
             var textlineDialogueUI = FindObjectOfType<TextlineDialogueUI>();
             var originalDontLoadScenes = textlineDialogueUI.dontLoadConversationInScenes;
             textlineDialogueUI.dontLoadConversationInScenes = new int[0] { }; // Make sure we save regardless of scene.
@@ -66,6 +73,12 @@ namespace PixelCrushers.DialogueSystem.MenuSystem
             yield return new WaitForEndOfFrame();
             textlineDialogueUI.dontLoadConversationInScenes = originalDontLoadScenes;
             DialogueManager.StopConversation();
+        }
+
+        private IEnumerator ReturnToTitleWhenDoneSaving()
+        {
+            yield return StartCoroutine(save_enumerator());
+            var saveHelper = FindObjectOfType<SaveHelper>();
             saveHelper.ReturnToTitleMenu();
         }
 

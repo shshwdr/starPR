@@ -702,22 +702,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 2799575166035301812, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2799575166035301812, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2799575166035301812, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2799575166035301812, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3569013442768261272, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3258,6 +3242,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 7363203277321671335, guid: be2ef28d0a06c6d4484b3dfa1ce71f6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472214198906822092, guid: be2ef28d0a06c6d4484b3dfa1ce71f6d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be2ef28d0a06c6d4484b3dfa1ce71f6d, type: 3}
 --- !u!1001 &7719635262108872444
@@ -3267,6 +3259,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 61631531, guid: 8146057e080ea744c8b1596eb4d0f738, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7719635262493382452, guid: 8146057e080ea744c8b1596eb4d0f738, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3354,6 +3350,14 @@ PrefabInstance:
     - target: {fileID: 7719635262504688562, guid: 8146057e080ea744c8b1596eb4d0f738, type: 3}
       propertyPath: m_Name
       value: Menu System
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719635262510697022, guid: 8146057e080ea744c8b1596eb4d0f738, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719635262510726520, guid: 8146057e080ea744c8b1596eb4d0f738, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8146057e080ea744c8b1596eb4d0f738, type: 3}

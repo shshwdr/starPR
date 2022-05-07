@@ -1059,6 +1059,18 @@ PrefabInstance:
       propertyPath: sequence
       value: LoadLevel(weibo lobby)
       objectReference: {fileID: 0}
+    - target: {fileID: 259123513510423291, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2799575164835018888}
+    - target: {fileID: 259123513510423291, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: openWeibo
+      objectReference: {fileID: 0}
+    - target: {fileID: 259123513510423291, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1161,6 +1173,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2799575166425098709}
     m_Modifications:
+    - target: {fileID: 259123513510423291, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2799575164835018888}
+    - target: {fileID: 259123513510423291, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: openWeixin
+      objectReference: {fileID: 0}
+    - target: {fileID: 259123513510423291, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

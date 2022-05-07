@@ -91,7 +91,6 @@ GameObject:
   - component: {fileID: 259123513510423289}
   - component: {fileID: 259123513510423290}
   - component: {fileID: 259123513510423291}
-  - component: {fileID: 259123513510423288}
   m_Layer: 5
   m_Name: app Button
   m_TagString: Untagged
@@ -201,7 +200,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 259123513510423288}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.SequenceTrigger, Assembly-CSharp-firstpass
         m_MethodName: OnUse
         m_Mode: 1
@@ -213,28 +212,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &259123513510423288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259123513510423293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71105a8d41f2bbf48931dc18e3a2a5da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  once: 0
-  sequence: LoadLevel(wechat lobby)
-  speaker: {fileID: 0}
-  listener: {fileID: 0}
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags: []
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  trigger: 32
-  waitOneFrameOnStartOrEnable: 1
