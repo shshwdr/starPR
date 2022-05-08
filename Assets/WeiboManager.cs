@@ -12,6 +12,8 @@ public class OneWeiboInfo
     public bool isPositive;
     public WeiboSentenceInfo weiboSentenceInfo;
     public List<string> keywords;
+    public string image;
+
 }
 
 public class WeiboManager : Singleton<WeiboManager>
@@ -42,14 +44,15 @@ public class WeiboManager : Singleton<WeiboManager>
         weiboCount--;
         EventPool.Trigger("updateWeibos");
     }
-    public OneWeiboInfo getOneWeibo()
+    public OneWeiboInfo getOneWeibo(bool hasToHaveImage = false)
     {
         OneWeiboInfo res = new OneWeiboInfo();
         res.userName = WeiboNameSpawner.Instance.getName();
-        var oneWeiboSentence = WeiboSpawner.Instance.getOneWeiboSentence();
+        var oneWeiboSentence = WeiboSpawner.Instance.getOneWeiboSentence(hasToHaveImage);
         res.weiboSentenceInfo = oneWeiboSentence;
         res.word = oneWeiboSentence.words;
         res.isPositive = oneWeiboSentence.isPositive>0;
+        res.image = oneWeiboSentence.image;
         res.likes = Random.Range(0, 10);
         res.keywords = new List<string>();
 
@@ -73,11 +76,11 @@ public class WeiboManager : Singleton<WeiboManager>
         return res;
     }
 
-    public void spawnWeibos(int count)
+    public void spawnWeibos(int count,bool hasToHaveImage = false)
     {
         for (int i = 0; i < count; i++)
         {
-            currentWeibos.Add(getOneWeibo());
+            currentWeibos.Add(getOneWeibo(hasToHaveImage));
         }
         
         EventPool.Trigger("updateWeibos");
@@ -89,6 +92,7 @@ public class WeiboManager : Singleton<WeiboManager>
         {
             currentWeibosWithKeywords[keyword.keyword] = (new HashSet<OneWeiboInfo>());
         }
+        spawnWeibos(1,true);
         spawnWeibos(10);
 
 

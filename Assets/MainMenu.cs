@@ -15,7 +15,10 @@ public class MainMenu : Singleton<MainMenu>
 
     public void changeAppGeneral()
     {
-        menuUtility.save();
+        if (menuUtility)
+        {
+            menuUtility.save();
+        }
     }
 
     public void openWeixin()

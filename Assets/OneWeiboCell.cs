@@ -18,6 +18,13 @@ public class OneWeiboCell : MonoBehaviour
     [SerializeField]
     Button deleteButton;
 
+    [SerializeField]
+    GameObject imagePanel;
+
+    [SerializeField]
+    GameObject imageContent;
+
+
     OneWeiboInfo weiboInfo;
 
     bool hasLiked;
@@ -37,6 +44,10 @@ public class OneWeiboCell : MonoBehaviour
         deleteButton.onClick.AddListener(onDeleteButton);
     }
 
+    public void OnClickImage()
+    {
+        MainMenu.Instance.openMeitu();
+    }
     public void updateWeiboCell()
     {
         userName.text = weiboInfo.userName;
@@ -47,6 +58,18 @@ public class OneWeiboCell : MonoBehaviour
         }
         word.text = finalText;
         likedCount.text = (weiboInfo.likes + (isLiking ? 1 : 0)).ToString();
+
+
+        if(weiboInfo.image!=null && weiboInfo.image.Length > 0)
+        {
+            imagePanel.SetActive(true);
+            Utils.destroyAllChildren(imageContent.transform);
+            Instantiate(Resources.Load("MeituImage/" + weiboInfo.image), imageContent.transform);
+        }
+        else
+        {
+            imagePanel.SetActive(false);
+        }
     }
 
     void onDeleteButton()

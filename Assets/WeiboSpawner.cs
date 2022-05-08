@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeiboSentenceInfo {
     public string words;
     public int isPositive;
+    public string image;
     public int isNegative;
 }
 
@@ -15,14 +16,16 @@ public class WeiboSpawner : Singleton<WeiboSpawner>
     List<string> negativeSenteces = new List<string>();
     List<WeiboSentenceInfo> weiboSentenceInfos = new List<WeiboSentenceInfo>();
     Dictionary<string, HashSet<WeiboSentenceInfo>> weibosWithKeywords = new Dictionary<string, HashSet<WeiboSentenceInfo>>();
+    HashSet<WeiboSentenceInfo> weiboWithImage = new HashSet<WeiboSentenceInfo>();
 
-    public string getPraiseOne()
-    {
-        return "微笑哥哥，我想你啦！";
-    }
 
-    public WeiboSentenceInfo getOneWeiboSentence()
+
+    public WeiboSentenceInfo getOneWeiboSentence(bool hasToHaveImage = false)
     {
+        if (hasToHaveImage)
+        {
+            return Utils.randomHashSet(weiboWithImage);
+        }
         var randomKeyword = WeiboKeywordsManager.Instance.randomUnlockedKeyword;
         return Utils.randomHashSet(weibosWithKeywords[randomKeyword]);
     }
@@ -49,6 +52,10 @@ public class WeiboSpawner : Singleton<WeiboSpawner>
                     {
                         weibosWithKeywords[keyword.keyword].Add(info);
                     }
+                }
+                if (info.image != null && info.image.Length > 0)
+                {
+                    weiboWithImage.Add(info);
                 }
             }
         }
