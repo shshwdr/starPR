@@ -7,11 +7,13 @@ using UnityEngine.EventSystems;
 public class InteractiveWeiboContent : MonoBehaviour, IPointerClickHandler
 {
     TextMeshProUGUI m_TextMeshPro;
+    TMP_Text m_Text;
     Camera m_Camera;
     // Start is called before the first frame update
     void Start()
     {
         m_TextMeshPro = GetComponent<TextMeshProUGUI>();
+        m_Text = GetComponent<TMP_Text>();
        // m_Camera = Camera.main;
     }
     void LateUpdate()
@@ -32,6 +34,11 @@ public class InteractiveWeiboContent : MonoBehaviour, IPointerClickHandler
             TMP_LinkInfo linkInfo = m_TextMeshPro.textInfo.linkInfo[linkIndex];
             Debug.Log("link click " + linkInfo.GetLinkText() +" id "+ linkInfo.GetLinkID());
             WeiboKeywordsManager.Instance.addKeywordCount(linkInfo.GetLinkText());
+            //var formerText = m_TextMeshPro.text;
+            //var linkStartIndex = linkInfo.linkTextfirstCharacterIndex - "<link>".Length;
+            //var linkTextEndIndex = linkInfo.linkTextfirstCharacterIndex + linkInfo.linkTextLength;
+            //var newText = formerText.Substring(0, linkStartIndex) + linkInfo.GetLinkText() + formerText.Substring(linkTextEndIndex, linkTextEndIndex + "</link>".Length);
+            //m_TextMeshPro.text = newText;
         }
     }
 }

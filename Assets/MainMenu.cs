@@ -30,6 +30,18 @@ public class MainMenu : Singleton<MainMenu>
         changeAppGeneral();
         SceneManager.LoadScene("weibo lobby");
     }
+    public void openMeitu()
+    {
+
+        changeAppGeneral();
+        SceneManager.LoadScene("meitu lobby");
+    }
+    public void openBaike()
+    {
+
+        changeAppGeneral();
+        SceneManager.LoadScene("baike lobby");
+    }
 
     // Update is called once per frame
     void Update()

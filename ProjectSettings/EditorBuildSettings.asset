@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: 
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
     path: Assets/Dialogue System Extras/Textline/Lobby Example/0 Lobby.unity
@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/weibo lobby.unity
     guid: 6c6b4321334da4f4491380885331d783
+  - enabled: 1
+    path: Assets/Scenes/baike lobby.unity
+    guid: d2e8bebb5e473c345a000c85f678d52a
+  - enabled: 1
+    path: Assets/Scenes/meitu lobby.unity
+    guid: f80e498f1123ed14d8ec0ecfa5978b61
   m_configObjects: {}
