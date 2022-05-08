@@ -1,3 +1,4 @@
+﻿using Pool;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -18,6 +19,13 @@ public class WeiboCenterPopup : MonoBehaviour
     {
         text = GetComponentInChildren<TMP_Text>();
         panel.SetActive(false);
+
+        EventPool.OptIn<MeituEditableItem>("SelectImage",addMeituSelectMessage);
+    }
+
+    void addMeituSelectMessage(MeituEditableItem item)
+    {
+        addMessage("成功选中！");
     }
     public void addMessage(string t)
     {
