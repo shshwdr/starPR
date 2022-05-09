@@ -19,6 +19,7 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             var message = GetParameter(0);
 
             Pool.EventPool.Trigger(message);
+            Stop();
         }
 
         void Update()

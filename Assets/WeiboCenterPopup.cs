@@ -20,11 +20,13 @@ public class WeiboCenterPopup : MonoBehaviour
         text = GetComponentInChildren<TMP_Text>();
         panel.SetActive(false);
 
-        EventPool.OptIn<MeituEditableItem>("SelectImage",addMeituSelectMessage);
+        EventPool.OptIn<MeituEditableItem>("SelectImage", addMeituSelectMessage);
+        EventPool.OptIn<string>("ShowMessage", addMessage);
     }
 
     void addMeituSelectMessage(MeituEditableItem item)
     {
+        MeituSelectManager.Instance.selectItem(item);
         addMessage("成功选中！");
     }
     public void addMessage(string t)

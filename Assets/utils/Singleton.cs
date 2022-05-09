@@ -13,7 +13,10 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     protected virtual void Awake()
     {
-        if (Instance != this) Destroy(gameObject);
+        if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
         DontDestroyOnLoad(gameObject);
     }
     /// <summary>

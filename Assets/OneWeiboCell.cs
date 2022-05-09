@@ -46,6 +46,7 @@ public class OneWeiboCell : MonoBehaviour
 
     public void OnClickImage()
     {
+        MeituManager.Instance.addImage(weiboInfo.image);
         MainMenu.Instance.openMeitu();
     }
     public void updateWeiboCell()

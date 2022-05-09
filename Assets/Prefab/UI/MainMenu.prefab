@@ -873,6 +873,8 @@ GameObject:
   - component: {fileID: 2799575166425098711}
   - component: {fileID: 2799575166425098710}
   - component: {fileID: 2799575166425098704}
+  - component: {fileID: 1274268569}
+  - component: {fileID: 1274268570}
   m_Layer: 5
   m_Name: foot
   m_TagString: Untagged
@@ -967,6 +969,34 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1274268569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2799575166425098708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3639e2a35d9d24db60e5b273eb14ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: showWeibo
+  toShow: {fileID: 834419114449687501}
+--- !u!114 &1274268570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2799575166425098708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3639e2a35d9d24db60e5b273eb14ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: showMeitu
+  toShow: {fileID: 4315157629459801679}
 --- !u!1 &2894821741567646696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,6 +1193,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+--- !u!1 &834419114449687501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 259123513510423293, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+  m_PrefabInstance: {fileID: 580089918352308528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &834419114449687500 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
@@ -1399,6 +1434,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+--- !u!1 &4315157629459801679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 259123513510423293, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+  m_PrefabInstance: {fileID: 4069585512279166130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4315157629459801678 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
@@ -1449,7 +1489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1457,7 +1497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1497,11 +1537,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 656.25
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1518,6 +1558,10 @@ PrefabInstance:
     - target: {fileID: 259123513510423293, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_Name
       value: baike Button (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 259123513510423293, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}

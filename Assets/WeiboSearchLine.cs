@@ -13,6 +13,11 @@ public class WeiboSearchLine : MonoBehaviour
         dropdown = GetComponentInChildren<TMP_Dropdown>();
         dropdown.onValueChanged.AddListener(onValueChanged);
         EventPool.OptIn<string>("addOption", addOption);
+
+        foreach(var key in WeiboKeywordsManager.Instance.unlockedKeywords)
+        {
+            addOption(key);
+        }
     }
 
     void addOption(string ad)

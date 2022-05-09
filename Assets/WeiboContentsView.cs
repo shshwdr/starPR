@@ -9,7 +9,7 @@ public class WeiboContentsView : MonoBehaviour
     OneWeiboCell[] weiboCells;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         weiboCells = GetComponentsInChildren<OneWeiboCell>(true);
         EventPool.OptIn("updateWeibos", updateWeibos);

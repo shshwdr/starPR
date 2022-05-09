@@ -38,6 +38,7 @@ public class InteractiveWeiboContent : MonoBehaviour, IPointerClickHandler
             //var linkStartIndex = linkInfo.linkTextfirstCharacterIndex - "<link>".Length;
             //var linkTextEndIndex = linkInfo.linkTextfirstCharacterIndex + linkInfo.linkTextLength;
             //var newText = formerText.Substring(0, linkStartIndex) + linkInfo.GetLinkText() + formerText.Substring(linkTextEndIndex, linkTextEndIndex + "</link>".Length);
+            //newText = newText;
             //m_TextMeshPro.text = newText;
         }
     }

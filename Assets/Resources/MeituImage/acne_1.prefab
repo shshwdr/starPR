@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 7368486704976944954}
   - component: {fileID: 7368486704976944948}
   - component: {fileID: 7368486704976944951}
+  - component: {fileID: 672153700}
   m_Layer: 5
   m_Name: acne
   m_TagString: Untagged
@@ -164,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f982d31abad7854a92e1810bb6a2c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 0
 --- !u!61 &7368486704976944951
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -190,6 +192,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &672153700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7368486704976944952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 0
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0
 --- !u!1 &7368486705260846148
 GameObject:
   m_ObjectHideFlags: 0

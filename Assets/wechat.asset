@@ -515,7 +515,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 33.030922
-        y: 133
+        y: 130.67444
         width: 160
         height: 30
     - id: 3
@@ -1311,7 +1311,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: EventSend(showWeibo)
         type: 0
         typeString: CustomFieldType_Text
       - title: es
@@ -2207,7 +2207,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u627E\u4E00\u526F\u56FE\uFF0C\u6211\u6765\u6559\u4F60\u600E\u4E48\u5904\u7406\u5B83\uFF01"
+        value: "\u627E\u4E00\u526F\u56FE\u5E76\u70B9\u51FB\u5B83\uFF0C\u6211\u6765\u6559\u4F60\u600E\u4E48\u5904\u7406\u5B83\uFF01"
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -2363,7 +2363,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u597D\u50CF\u8FD8\u6CA1\u6709\u54E6"
+        value: "\u597D\u50CF\u8FD8\u6CA1\u6709\u54E6\u3002\u8BD5\u7740\u7528\u5FAE\u7B11\u54E5\u54E5\u641C\u7D22\u4E00\u4E0B\uFF0C\u627E\u5230\u540E\u70B9\u51FB\u56FE\u7247"
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -2744,7 +2744,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u5F88\u7B80\u5355\uFF0C\u70B9\u51FB\u56FE\u7247\u540E\u5B83\u5C31\u4F1A\u52A0\u5165\u7F8E\u56FE\u79C0\u79C0\uFF0C\u5728\u91CC\u9762\u70B9\u51FB\u9700\u8981\u4FEE\u6539\u7684\u90E8\u5206"
+        value: "\u5F88\u7B80\u5355\uFF0C\u70B9\u51FB\u56FE\u7247\u540E\u5B83\u5C31\u4F1A\u52A0\u5165\u7F8E\u56FE\u79C0\u79C0\uFF0C\u5728\u91CC\u9762\u5708\u9009\u9700\u8981\u4FEE\u6539\u7684\u90E8\u5206"
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -2760,7 +2760,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: EventSend(showWeibo)
         type: 0
         typeString: CustomFieldType_Text
       - title: es
@@ -2819,7 +2819,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u6539\u597D\u4EE5\u540E\u91CD\u65B0\u53D1\u5E03\u5C31\u53EF\u4EE5\u4E86\u3002\u6709\u7455\u75B5\u7684\u56FE\u6211\u4F1A\u8054\u7CFB\u90A3\u4E2A\u7C89\u4E1D\u5220\u6389\u7684\u3002"
+        value: "\u53BB\u6389\u7455\u75B5\u540E\u91CD\u65B0\u53D1\u5E03\u5C31\u53EF\u4EE5\u4E86\u3002\u6709\u7455\u75B5\u7684\u56FE\u6211\u4F1A\u8054\u7CFB\u90A3\u4E2A\u7C89\u4E1D\u5220\u6389\u7684\u3002"
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -2928,13 +2928,13 @@ MonoBehaviour:
       - originConversationID: 1
         originDialogueID: 37
         destinationConversationID: 1
-        destinationDialogueID: 38
+        destinationDialogueID: 39
         isConnector: 0
         priority: 2
       - originConversationID: 1
         originDialogueID: 37
         destinationConversationID: 1
-        destinationDialogueID: 39
+        destinationDialogueID: 38
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3005,7 +3005,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 38
+        destinationConversationID: 1
+        destinationDialogueID: 37
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -3599,7 +3605,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 46
+        destinationConversationID: 1
+        destinationDialogueID: 45
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -3837,8 +3849,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.40000045
+    canvasScrollPosition: {x: 272.46317, y: 1674.4738}
+    canvasZoom: 0.43000045
   - id: 2
     fields:
     - title: Title

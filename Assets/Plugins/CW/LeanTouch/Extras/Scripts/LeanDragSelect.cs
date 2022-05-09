@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 using CW.Common;
 using System.Linq;
@@ -148,16 +148,17 @@ namespace Lean.Touch
 		List<MeituEditableItem> selectableItems;
 		void Start()
         {
-			selectableItems = GameObject.FindObjectsOfType<MeituEditableItem>().ToList();
 
 		}
 		void select(FingerData fingerData)
         {
 			var positionCount = fingerData.Line.positionCount;
 
+			selectableItems = GameObject.FindObjectsOfType<MeituEditableItem>().ToList();
 			if (fingerData.Line.positionCount < 3)
-            {
-				Debug.Log("not enough points");
+			{
+				EventPool.Trigger("SelectImageFailed");
+				EventPool.Trigger("ShowMessage", "画圈选择内容");
 				return;
             }
 			Vector3 center = fingerData.Line.GetPosition(0);
@@ -185,14 +186,16 @@ namespace Lean.Touch
 				var diff = item.transform.position - center;
 				if ((new Vector2(diff.x, diff.y)).magnitude<item.radius  &&
                     maxRadius < 2 * item.radius)
-                {
+				{
 					EventPool.Trigger("SelectImage", item);
-					Debug.Log("circled");
+					//Debug.Log("circled");
 					return;
                 }
-            }
+			}
+			EventPool.Trigger("SelectImageFailed");
+			EventPool.Trigger("ShowMessage", "选取图片失败");
 			//EventPool.Trigger("SelectImageFailed",""
-			Debug.Log("not circled");
+			//Debug.Log("not circled"); 
 
 		}
 
@@ -240,8 +243,11 @@ namespace Lean.Touch
 			{
 				link.Finger = null; // The line will gradually fade out in Update
 			}
+            if (fingerDatas.Count > 0)
+            {
 
-			select(fingerDatas[0]);
+				select(fingerDatas[0]);
+			}
 		}
 	}
 }
