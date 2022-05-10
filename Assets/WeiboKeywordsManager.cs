@@ -56,6 +56,8 @@ public class WeiboKeywordsManager : Singleton<WeiboKeywordsManager>
             lockedKeywords.Remove(keyword);
 
             DialogueLua.SetVariable("keywordsCount", unlockedKeywords.Count);
+
+            Sequencer.Message("keywordsCount_1");
             GameObject.FindObjectOfType<WeiboCenterPopup>().addMessage("解锁"+keyword);
             EventPool.Trigger("addOption", keyword);
             EventPool.Trigger("updateWeibos");

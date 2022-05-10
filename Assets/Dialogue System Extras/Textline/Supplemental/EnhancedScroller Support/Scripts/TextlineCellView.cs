@@ -51,6 +51,7 @@ namespace PixelCrushers.DialogueSystem.Extras
                 instantiatedChild = Instantiate(prefab, transform, false);
             }
             var panel = instantiatedChild.GetComponent<StandardUIMenuPanel>();
+            panel.gameObject.SetActive(true);
             panel.ShowResponses(subtitle, responses, target);
         }
     }

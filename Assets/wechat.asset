@@ -1311,7 +1311,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: EventSend(showWeibo)
+        value: EventSend(showWeibo);
         type: 0
         typeString: CustomFieldType_Text
       - title: es
@@ -1329,13 +1329,7 @@ MonoBehaviour:
       - originConversationID: 1
         originDialogueID: 13
         destinationConversationID: 1
-        destinationDialogueID: 18
-        isConnector: 0
-        priority: 2
-      - originConversationID: 1
-        originDialogueID: 13
-        destinationConversationID: 1
-        destinationDialogueID: 17
+        destinationDialogueID: 50
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1347,81 +1341,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 689.6663
         y: 509.77252
-        width: 160
-        height: 30
-    - id: 17
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Pictures
-        value: '[]'
-        type: 3
-        typeString: CustomFieldType_Files
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: "\u52A0\u6CB9\uFF0C\u7C89\u4E1D\u6570\u5230\u8FBE101\u65F6\u518D\u6765\u627E\u6211\u3002"
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Parenthetical
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Audio Files
-        value: '[]'
-        type: 3
-        typeString: CustomFieldType_Files
-      - title: Video File
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: es
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 1
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 17
-        destinationConversationID: 1
-        destinationDialogueID: 13
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 632.4976
-        y: 590.6816
         width: 160
         height: 30
     - id: 18
@@ -1842,7 +1761,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: WaitForMessage(keywordsCount_1)
         type: 0
         typeString: CustomFieldType_Text
       - title: es
@@ -2298,7 +2217,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: WaitForMessage(collectImagesCount_1)
         type: 0
         typeString: CustomFieldType_Text
       - title: es
@@ -2910,7 +2829,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: WaitForMessage(processedImagesCount_1)
         type: 0
         typeString: CustomFieldType_Text
       - title: es
@@ -3848,9 +3767,86 @@ MonoBehaviour:
         y: 265.6087
         width: 160
         height: 30
+    - id: 50
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u7C89\u4E1D\u6570\u5230\u8FBE101\u7684\u65F6\u5019\u518D\u6765\u627E\u6211\u804A"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: '
+
+          WaitForMessage(fansCount_1)'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: es
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 50
+        destinationConversationID: 1
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 868.97656
+        y: 573.5656
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 272.46317, y: 1674.4738}
-    canvasZoom: 0.43000045
+    canvasScrollPosition: {x: 326.62958, y: 499.09988}
+    canvasZoom: 0.5800004
   - id: 2
     fields:
     - title: Title

@@ -21,49 +21,43 @@ namespace PixelCrushers.DialogueSystem.MenuSystem
             FindObjectOfType<Pause>().pausePanel.Open();
         }
 
-        public void StartConversation(string title)
-        {
-            StartCoroutine(StartConversationAfterSaveSystem(title));
-        }
+        //public void StartConversation(string title)
+        //{
+        //    StartCoroutine(StartConversationAfterSaveSystem(title));
+        //}
 
-        private IEnumerator StartConversationAfterSaveSystem(string title)
-        {
-            for (int i = 0; i < (SaveSystem.framesToWaitBeforeApplyData + 1); i++)
-            {
-                yield return null;
-            }
-            if (!DialogueManager.isConversationActive)
-            {
-                DialogueLua.SetVariable("Conversation", title);
-                var textlineDialogueUI = FindObjectOfType<TextlineDialogueUI>();
-                if (DialogueLua.DoesVariableExist(textlineDialogueUI.currentDialogueEntryRecords))
-                {
-                    var originalDontLoadScenes = textlineDialogueUI.dontLoadConversationInScenes;
-                    textlineDialogueUI.dontLoadConversationInScenes = new int[0] { }; // Make sure we load regardless of scene.
-                    textlineDialogueUI.OnApplyPersistentData();
-                    textlineDialogueUI.dontLoadConversationInScenes = originalDontLoadScenes;
-                }
-                else
-                {
-                    DialogueManager.StartConversation(title);
-                }
-            }
-        }
-
-        public void SaveAndReturnToTitleMenu()
-        {
-            StartCoroutine(ReturnToTitleWhenDoneSaving());
-        }
+        //private IEnumerator StartConversationAfterSaveSystem(string title)
+        //{
+        //    for (int i = 0; i < (SaveSystem.framesToWaitBeforeApplyData + 1); i++)
+        //    {
+        //        yield return null;
+        //    }
+        //    if (!DialogueManager.isConversationActive)
+        //    {
+        //        DialogueLua.SetVariable("Conversation", title);
+        //        var textlineDialogueUI = FindObjectOfType<TextlineDialogueUI>();
+        //        if (DialogueLua.DoesVariableExist(textlineDialogueUI.currentDialogueEntryRecords))
+        //        {
+        //            var originalDontLoadScenes = textlineDialogueUI.dontLoadConversationInScenes;
+        //            textlineDialogueUI.dontLoadConversationInScenes = new int[0] { }; // Make sure we load regardless of scene.
+        //            textlineDialogueUI.OnApplyPersistentData();
+        //            textlineDialogueUI.dontLoadConversationInScenes = originalDontLoadScenes;
+        //        }
+        //        else
+        //        {
+        //            DialogueManager.StartConversation(title);
+        //        }
+        //    }
+        //}
 
         public void save()
         {
 
-            StartCoroutine(save_enumerator());
+            StartCoroutine(saveEnumerator());
         }
 
-        public IEnumerator save_enumerator()
+        private IEnumerator saveEnumerator()
         {
-
             var textlineDialogueUI = FindObjectOfType<TextlineDialogueUI>();
             var originalDontLoadScenes = textlineDialogueUI.dontLoadConversationInScenes;
             textlineDialogueUI.dontLoadConversationInScenes = new int[0] { }; // Make sure we save regardless of scene.
@@ -75,9 +69,15 @@ namespace PixelCrushers.DialogueSystem.MenuSystem
             DialogueManager.StopConversation();
         }
 
+        public void SaveAndReturnToTitleMenu()
+        {
+            StartCoroutine(ReturnToTitleWhenDoneSaving());
+        }
+
+
         private IEnumerator ReturnToTitleWhenDoneSaving()
         {
-            yield return StartCoroutine(save_enumerator());
+            yield return StartCoroutine(saveEnumerator());
             var saveHelper = FindObjectOfType<SaveHelper>();
             saveHelper.ReturnToTitleMenu();
         }

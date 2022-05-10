@@ -166,9 +166,12 @@ namespace PixelCrushers.DialogueSystem.Extras
             if (!DialogueLua.DoesVariableExist(currentDialogueEntryRecords)) return;
             StopAllCoroutines();
 
-            // Load dialogue entry records:
+            var actorName = DialogueLua.GetVariable(currentConversationActor).AsString;
+            var conversantName = DialogueLua.GetVariable(currentConversationConversant).AsString;
             var s = DialogueLua.GetVariable(currentDialogueEntryRecords).AsString;
-            if (Debug.isDebugBuild) Debug.Log("TextlineDialogueUI.OnApplyPersistentData: Restoring current conversation from " + currentDialogueEntryRecords + ": " + s);
+            if (string.IsNullOrEmpty(s)) return;
+
+            if (Debug.isDebugBuild) Debug.Log("Dialogue System: Restoring current conversation from " + currentDialogueEntryRecords + ": " + s);
             var ints = s.Split(';');
             var numRecords = Tools.StringToInt(ints[0]);
             for (int i = 0; i < numRecords; i++)
@@ -187,20 +190,15 @@ namespace PixelCrushers.DialogueSystem.Extras
                 try
                 {
                     // Resume conversation:
-                    //if (dontRepeatLastSequence) isLoadingGame = true;
                     isLoadingGame = true;
                     cellDataList.Clear();
                     var conversation = DialogueManager.MasterDatabase.GetConversation(lastRecord.conversationID);
-                    var actorName = DialogueLua.GetVariable(currentConversationActor).AsString;
-                    var conversantName = DialogueLua.GetVariable(currentConversationConversant).AsString;
                     var actor = GameObject.Find(actorName);
                     var conversant = GameObject.Find(conversantName);
                     var actorTransform = (actor != null) ? actor.transform : null;
                     var conversantTransform = (conversant != null) ? conversant.transform : null;
                     if (Debug.isDebugBuild) Debug.Log("Resuming '" + conversation.Title + "' at entry " + lastRecord.entryID);
                     DialogueManager.StopConversation();
-                    //Open();
-                    //var conversationModel = new ConversationModel(DialogueManager.masterDatabase, conversation.Title, actorTransform, conversantTransform, true, DialogueManager.isDialogueEntryValid);
                     var lastEntry = DialogueManager.MasterDatabase.GetDialogueEntry(lastRecord.conversationID, lastRecord.entryID);
                     var originalSequence = lastEntry.Sequence; // Handle last entry's sequence differently if end entry.
                     npcPreDelaySettings.CopyTo(npcPreDelaySettingsCopy);
@@ -223,12 +221,12 @@ namespace PixelCrushers.DialogueSystem.Extras
                     }
                     else
                     {
-                        lastEntry.Sequence = "Continue()@0.1";
+                        //--- Replay entire last sequence: lastEntry.Sequence = "Delay(0.1)";
+                        //--- Will send Sent/Received messages later in method in case sequences wait for them.
                     }
                     skipNextRecord = true;
                     isInPreDelay = false;
                     Open();
-                    //DialogueManager.StartConversation(conversation.Title, actorTransform, conversantTransform, lastRecord.entryID);
                     var conversationModel = new ConversationModel(DialogueManager.masterDatabase, conversation.Title, actorTransform, conversantTransform, true, null, lastRecord.entryID);
 
                     lastContinueButton = continueButton;
@@ -261,6 +259,13 @@ namespace PixelCrushers.DialogueSystem.Extras
                     lastEntry.Sequence = originalSequence;
                     npcPreDelaySettingsCopy.CopyTo(npcPreDelaySettings);
                     pcPreDelaySettingsCopy.CopyTo(pcPreDelaySettings);
+
+                    // Advance conversation if playing last sequence and it's configured to wait for Sent/Received messages:
+                    if (!dontRepeatLastSequence)
+                    {
+                        Sequencer.Message("Sent");
+                        Sequencer.Message("Received");
+                    }
                 }
                 finally
                 {
@@ -280,7 +285,7 @@ namespace PixelCrushers.DialogueSystem.Extras
             isLoadingGame = false;
         }
 
-#region EnhancedScroller Handlers
+        #region EnhancedScroller Handlers
 
         /// <summary>
         /// This tells the scroller the number of cells that should have room allocated. 
@@ -352,7 +357,7 @@ namespace PixelCrushers.DialogueSystem.Extras
             return cellView;
         }
 
-#endregion
+        #endregion
 
     }
 }

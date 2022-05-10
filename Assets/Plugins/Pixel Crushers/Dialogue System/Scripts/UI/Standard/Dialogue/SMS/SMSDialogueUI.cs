@@ -74,11 +74,16 @@ namespace PixelCrushers.DialogueSystem
         [Tooltip("Load the saved conversation specified in the Conversation variable.")]
         public bool useConversationVariable = false;
 
-        [Tooltip("")]
+        [Tooltip("When resuming conversation, don't play sequence of last entry.")]
         public bool dontRepeatLastSequence = false;
+
+        [Tooltip("Disable Audio() and AudioWait() sequencer commands when resuming last entry.")]
+        public bool disableAudioOnLastSequence = true;
 
         [Tooltip("When entering these scene(s), don't resume the conversation. Typically used for the start menu (scene 0).")]
         public int[] dontLoadConversationInScenes = new int[] { 0 };
+
+        public static string conversationVariableOverride;
 
         [Serializable]
         public class DialogueEntryRecord
@@ -108,7 +113,6 @@ namespace PixelCrushers.DialogueSystem
 
         protected bool shouldShowContinueButton = false;
         protected UnityEngine.UI.Button continueButton = null;
-
 
         protected virtual void CheckAssignments()
         {
@@ -412,6 +416,11 @@ namespace PixelCrushers.DialogueSystem
         /// </summary>
         public virtual void OnApplyPersistentData()
         {
+            if (!string.IsNullOrEmpty(conversationVariableOverride))
+            {
+                DialogueLua.SetVariable("Conversation", conversationVariableOverride);
+            }
+
             if (DontLoadInThisScene()) Debug.Log("OnApplyPersistentData Dont Load in this scene: " + SceneManager.GetActiveScene().buildIndex);
             if (DontLoadInThisScene()) return;
             records.Clear();
@@ -439,7 +448,6 @@ namespace PixelCrushers.DialogueSystem
                 try
                 {
                     // Resume conversation:
-                    //if (dontRepeatLastSequence) isLoadingGame = true;
                     isLoadingGame = true;
                     var conversation = DialogueManager.MasterDatabase.GetConversation(lastRecord.conversationID);
                     var actorName = DialogueLua.GetVariable(currentConversationActor).AsString;
@@ -472,7 +480,16 @@ namespace PixelCrushers.DialogueSystem
                     }
                     else
                     {
-                        lastEntry.Sequence = "Delay(0.1)";
+                        //--- Replay entire last sequence: lastEntry.Sequence = "Delay(0.1)";
+                        //--- Will send Sent/Received messages later in method in case sequences wait for them.
+                        if (disableAudioOnLastSequence)
+                        {
+                            if (string.IsNullOrEmpty(lastEntry.Sequence))
+                            {
+                                lastEntry.Sequence = DialogueManager.displaySettings.cameraSettings.defaultSequence;
+                            }
+                            lastEntry.Sequence = lastEntry.Sequence.Replace("AudioWait(", "None(").Replace("Audio(", "None(");
+                        }
                     }
                     skipNextRecord = true;
                     isInPreDelay = false;
@@ -499,6 +516,13 @@ namespace PixelCrushers.DialogueSystem
                     {
                         instantiatedMessages.Add(lastInstance);
                         lastInstance.transform.SetAsLastSibling();
+                    }
+
+                    // Advance conversation if playing last sequence and it's configured to wait for Sent/Received messages:
+                    if (!dontRepeatLastSequence)
+                    {
+                        Sequencer.Message("Sent");
+                        Sequencer.Message("Received");
                     }
                 }
                 finally

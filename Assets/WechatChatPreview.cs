@@ -26,7 +26,8 @@ public class WechatChatPreview : MonoBehaviour
     {
 
         //DialogueLua.SetVariable("Conversation", "Adam");
-        DialogueLua.SetVariable("Conversation", conversationName);
+        SMSDialogueUI.conversationVariableOverride = conversationName;
+        //DialogueLua.SetVariable("Conversation", conversationName);
         PixelCrushers.SaveSystem.LoadScene("wechat dialogue");
         //Sequencer.Message("SetVariable(Conversation,Adam);LoadLevel(wechat dialogue)");
         //SceneManager.LoadScene("wechat dialogue");
@@ -44,7 +45,7 @@ public class WechatChatPreview : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.1f);
         previewLabel.text = getLastSentence();
-        //newMessageObject.SetActive(hasMoreConversation());
+        newMessageObject.SetActive(hasMoreConversation());
     }
 
     string getLastSentence()

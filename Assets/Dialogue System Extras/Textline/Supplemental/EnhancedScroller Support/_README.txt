@@ -1,4 +1,4 @@
-NOTE: This is a work in progress. Some edge cases still need to be addressed.
+NOTE: This is a work in progress. Some edge cases may still need to be addressed.
 
 This supplement adds support for Enhanced Scroller:
 https://assetstore.unity.com/packages/tools/gui/enhancedscroller-36378
