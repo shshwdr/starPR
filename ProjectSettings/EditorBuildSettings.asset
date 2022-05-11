@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Dialogue System Extras/Textline/Lobby Example/1 Gameplay.unity
     guid: 4877a6551a812c54f8151f8fb711730f
   - enabled: 1
+    path: Assets/Scenes/prepare.unity
+    guid: 4f2352fc7a5dfd3488daee77477ee61a
+  - enabled: 1
     path: Assets/Scenes/wechat lobby.unity
     guid: 16910ac533b76564f89cdbcf86d63f29
   - enabled: 1

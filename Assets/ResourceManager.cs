@@ -21,7 +21,10 @@ public class ResourceManager : Singleton<ResourceManager>
         resources[ResourceType.fans] += addCount;
         EventPool.Trigger("updateFans");
         DialogueLua.SetVariable("fansCount", resources[ResourceType.fans]);
+        //todo not call everytime
         Sequencer.Message("fansCount_1");
+        //todo not call everytime
+        EventPool.Trigger("dialogueConditionChanged");
     }
 
     public void consumeHP(float value)

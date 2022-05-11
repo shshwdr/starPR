@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Pixel Crushers. All rights reserved.
 
+using Pool;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -409,6 +410,7 @@ namespace PixelCrushers.DialogueSystem
                 s += record.conversationID + ";" + record.entryID + ";";
             }
             DialogueLua.SetVariable(currentDialogueEntryRecords, s);
+            EventPool.Trigger("dialogueConditionChanged");
         }
 
         /// <summary>

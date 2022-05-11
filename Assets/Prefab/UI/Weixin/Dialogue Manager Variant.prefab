@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 111602, guid: c7bb0201a29929d40ae03537d0184175, type: 3}
       propertyPath: m_Name
-      value: Dialogue Manager Variant
+      value: Dialogue Manager
       objectReference: {fileID: 0}
     - target: {fileID: 111602, guid: c7bb0201a29929d40ae03537d0184175, type: 3}
       propertyPath: m_IsActive
@@ -73,11 +73,108 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7bb0201a29929d40ae03537d0184175, type: 3}
+--- !u!1 &7361935011221879338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 111602, guid: c7bb0201a29929d40ae03537d0184175, type: 3}
+  m_PrefabInstance: {fileID: 7361935011221965272}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7361935011201895352 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 22463072, guid: c7bb0201a29929d40ae03537d0184175, type: 3}
   m_PrefabInstance: {fileID: 7361935011221965272}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &645137325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7361935011221879338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 2
+  condition:
+    luaConditions: []
+    questConditions: []
+    acceptedTags: []
+    acceptedGameObjects: []
+    luaWizardIndex: -1
+    lastEvaluationValue: 0
+  setQuestState: 1
+  questName: 
+  questState: 0
+  setQuestEntryState: 0
+  questEntryNumber: 1
+  questEntryState: 0
+  luaCode: 
+  sequence: 
+  sequenceSpeaker: {fileID: 0}
+  sequenceListener: {fileID: 0}
+  waitOneFrameOnStartOrEnable: 1
+  alertMessage: 
+  textTable: {fileID: 0}
+  alertDuration: 0
+  sendMessages: []
+  barkSource: 0
+  barkConversation: 
+  barkText: 
+  barkTextSequence: 
+  barker: {fileID: 0}
+  barkTarget: {fileID: 0}
+  barkOrder: 0
+  allowBarksDuringConversations: 0
+  skipBarkIfNoValidEntries: 0
+  cacheBarkLines: 0
+  conversation: 
+  conversationConversant: {fileID: 0}
+  conversationActor: {fileID: 0}
+  startConversationEntryID: -1
+  exclusive: 0
+  replace: 0
+  skipIfNoValidEntries: 0
+  stopConversationOnTriggerExit: 0
+  stopConversationIfTooFar: 0
+  maxConversationDistance: 5
+  monitorConversationDistanceFrequency: 1
+  showCursorDuringConversation: 0
+  pauseGameDuringConversation: 0
+  setActiveActions: []
+  setEnabledActions: []
+  setAnimatorStateActions: []
+  onExecute:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 645137326}
+        m_TargetAssemblyTypeName: DialogueUtils, Assembly-CSharp
+        m_MethodName: finishDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  useConversationTitlePicker: 1
+  useBarkTitlePicker: 1
+  useQuestNamePicker: 1
+  selectedDatabase: {fileID: 11400000, guid: 156d360a523849c48897de302527b0c2, type: 2}
+--- !u!114 &645137326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7361935011221879338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dcbd3ed1e5af8e4e96748649456b4d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7361935011372518477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,6 +182,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7361935011201895352}
     m_Modifications:
+    - target: {fileID: 1551124580458218, guid: 26b324347a8f7dd418b3de9fe84f7dce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1580066115626110, guid: 26b324347a8f7dd418b3de9fe84f7dce, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -479,7 +580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224950455943144424, guid: 26b324347a8f7dd418b3de9fe84f7dce, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -100
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 224950455943144424, guid: 26b324347a8f7dd418b3de9fe84f7dce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -515,7 +616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224950455943144424, guid: 26b324347a8f7dd418b3de9fe84f7dce, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224973803613885048, guid: 26b324347a8f7dd418b3de9fe84f7dce, type: 3}
       propertyPath: m_AnchorMax.y

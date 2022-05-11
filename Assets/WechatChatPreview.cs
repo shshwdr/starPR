@@ -1,4 +1,5 @@
 using PixelCrushers.DialogueSystem;
+using Pool;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -20,6 +21,13 @@ public class WechatChatPreview : MonoBehaviour
         // var s = DialogueLua.GetVariable("DialogueEntryRecords").asString; // Assumes Use Conversation Variable is UNticked.
         // getLastSentence(s);
         StartCoroutine( loadLastSentence());
+        EventPool.OptIn("dialogueConditionChanged", onDialogueConditionChange);
+    }
+
+    void onDialogueConditionChange()
+    {
+
+        StartCoroutine(loadLastSentence());
     }
 
     public void selectDialogue()

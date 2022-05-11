@@ -28,6 +28,7 @@ public class MeituManager : Singleton<MeituManager>
 
             DialogueLua.SetVariable("processedImagesCount", DialogueLua.GetVariable("processedImagesCount").asInt + 1);
             Sequencer.Message("processedImagesCount_1");
+            EventPool.Trigger("dialogueConditionChanged");
 
         }
         else
@@ -45,6 +46,7 @@ public class MeituManager : Singleton<MeituManager>
         EventPool.Trigger("showMeitu");
         DialogueLua.SetVariable("collectImagesCount", DialogueLua.GetVariable("collectImagesCount").asInt +1);
         Sequencer.Message("collectImagesCount_1");
+        EventPool.Trigger("dialogueConditionChanged");
         meituImageList.Add(imageName);
     }
 
