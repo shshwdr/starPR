@@ -144,7 +144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "\u6709\u7455\u75B5"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c52723c5479645a4984708576278f4be, type: 2}
   m_sharedMaterial: {fileID: -3525995633598858701, guid: c52723c5479645a4984708576278f4be, type: 2}
@@ -382,6 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf5234f92af88c4fa3681dbfa9890f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameLabel: {fileID: 4817182175705910666}
   previewLabel: {fileID: 4817182176654107611}
   conversationName: boss
   newMessageObject: {fileID: 4817182176551852467}

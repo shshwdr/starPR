@@ -71,6 +71,26 @@ public class OneWeiboCell : MonoBehaviour
         {
             imagePanel.SetActive(false);
         }
+
+        if (weiboInfo.isDisabled)
+        {
+
+            GetComponent<Image>().color = Color.grey;
+        }
+        else
+        {
+
+            GetComponent<Image>().color = Color.white;
+        }
+        if (weiboInfo.isLiking)
+        {
+            likedCount.color = Color.red;
+        }
+        else
+        {
+
+            likedCount.color = Color.black;
+        }
     }
 
     void onDeleteButton()
@@ -81,24 +101,14 @@ public class OneWeiboCell : MonoBehaviour
     void onLikeButton()
     {
         //WeiboManager.Instance.removeWeibo(weiboInfo);
-        isLiking = !isLiking;
-        updateWeiboCell();
-        if (hasLiked)
+        weiboInfo.isLiking = !weiboInfo.isLiking;
+        if (weiboInfo.isDisabled)
         {
             return;
         }
-        hasLiked = true;
+        weiboInfo.isDisabled = true;
+        updateWeiboCell();
         ResourceManager.Instance.consumeHP(1);
-        GetComponent<Image>().color = Color.grey;
-        if (isLiking)
-        {
-            likedCount.color = Color.red;
-        }
-        else
-        {
-
-            likedCount.color = Color.black;
-        }
         if (weiboInfo.isPositive)
         {
             //todo how many fans add should be decided somewhere else

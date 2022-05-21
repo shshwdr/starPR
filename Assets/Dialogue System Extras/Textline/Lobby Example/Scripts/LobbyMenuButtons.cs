@@ -16,11 +16,11 @@ namespace PixelCrushers.DialogueSystem.Extras
 
         private void Start()
         {
-            if (continueButton == null) Debug.LogWarning(GetType().Name + ": Continue Button isn't assigned.", this);
-            if (restartButton == null) Debug.LogWarning(GetType().Name + ": Restart Button isn't assigned.", this);
+           // if (continueButton == null) Debug.LogWarning(GetType().Name + ": Continue Button isn't assigned.", this);
+           // if (restartButton == null) Debug.LogWarning(GetType().Name + ": Restart Button isn't assigned.", this);
             var hasSavedGame = SaveSystem.HasSavedGameInSlot(saveSlot);
-            if (continueButton != null) continueButton.gameObject.SetActive(hasSavedGame && !hasShownContinueButton);
-            if (restartButton != null) restartButton.gameObject.SetActive(hasSavedGame);
+            //if (continueButton != null) continueButton.gameObject.SetActive(hasSavedGame && !hasShownContinueButton);
+            //if (restartButton != null) restartButton.gameObject.SetActive(hasSavedGame);
             hasShownContinueButton = true;
         }
 

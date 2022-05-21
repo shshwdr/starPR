@@ -653,10 +653,10 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: dUI_MANAGER
+    1: dUI_MANAGER;TMP_PRESENT;USE_YARN
     4: dUI_MANAGER
-    7: dUI_MANAGER
-    13: dUI_MANAGER
+    7: dUI_MANAGER;TMP_PRESENT;USE_YARN
+    13: dUI_MANAGER;TMP_PRESENT;USE_YARN
     14: dUI_MANAGER
     19: dUI_MANAGER
     21: dUI_MANAGER

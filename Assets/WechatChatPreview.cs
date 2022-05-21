@@ -5,9 +5,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WechatChatPreview : MonoBehaviour
 {
+    [SerializeField]
+    Text nameLabel;
     [SerializeField]
     TMP_Text previewLabel;
     [SerializeField]
@@ -15,6 +18,11 @@ public class WechatChatPreview : MonoBehaviour
 
     [SerializeField]
     GameObject newMessageObject;
+
+    public void init(string n)
+    {
+        conversationName = n;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +30,7 @@ public class WechatChatPreview : MonoBehaviour
         // getLastSentence(s);
         StartCoroutine( loadLastSentence());
         EventPool.OptIn("dialogueConditionChanged", onDialogueConditionChange);
+        nameLabel.text = conversationName;
     }
 
     void onDialogueConditionChange()

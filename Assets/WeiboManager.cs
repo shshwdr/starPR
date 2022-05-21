@@ -13,6 +13,8 @@ public class OneWeiboInfo
     public WeiboSentenceInfo weiboSentenceInfo;
     public List<string> keywords;
     public string image;
+    public bool isLiking;
+    public bool isDisabled;
 
 }
 

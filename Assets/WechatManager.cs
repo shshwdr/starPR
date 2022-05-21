@@ -1,19 +1,28 @@
 using PixelCrushers.DialogueSystem;
+using Pool;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WechatManager : Singleton<WechatManager>
 {
-    List<string> unlockedDialogue = new List<string>() { "boss", "fans_1" };
+    List<string> unlockedDialogue = new List<string>() { "boss" };
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        EventPool.OptIn<string>("unlockDialogue", unlockDialogue);
+    }
+
+    public List<string> UnlockedDialogues { get { return unlockedDialogue; } }
+    public void unlockDialogue(string dia)
+    {
+        unlockedDialogue.Add(dia);
     }
 
     public bool hasAnyWechatUnfinished()
     {
+        //if is in dialogue, ignore current dialogue
         foreach(var n in unlockedDialogue)
         {
             if (hasMoreConversation(n))
@@ -27,7 +36,10 @@ public class WechatManager : Singleton<WechatManager>
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            unlockDialogue("fans_1");
+        }
     }
 
     bool hasMoreConversation(string conversationName)

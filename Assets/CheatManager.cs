@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheatManager : MonoBehaviour
 {
-    public GameObject weiboButton;
+    //public GameObject weiboButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,8 @@ public class CheatManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.U)){
-            weiboButton.SetActive(true);
+            var weiboButton = GameObject.FindObjectOfType<WeiboAppButton>(true);
+            weiboButton.gameObject.SetActive(true);
         }
     }
 }

@@ -22,7 +22,11 @@ public class ResourceManager : Singleton<ResourceManager>
         EventPool.Trigger("updateFans");
         DialogueLua.SetVariable("fansCount", resources[ResourceType.fans]);
         //todo not call everytime
-        Sequencer.Message("fansCount_1");
+        if (resources[ResourceType.fans] >= 105)
+        {
+
+            Sequencer.Message("fansCount_1");
+        }
         //todo not call everytime
         EventPool.Trigger("dialogueConditionChanged");
     }
