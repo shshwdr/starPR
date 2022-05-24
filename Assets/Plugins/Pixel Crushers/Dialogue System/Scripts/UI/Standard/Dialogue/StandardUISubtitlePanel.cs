@@ -587,6 +587,7 @@ namespace PixelCrushers.DialogueSystem
             var previousText = accumulateText ? m_accumulatedText : string.Empty;
             var previousChars = accumulateText ? UITools.StripRPGMakerCodes(Tools.StripTextMeshProTags(Tools.StripRichTextCodes(previousText))).Length : 0;
             SetFormattedText(subtitleText, previousText, subtitle.formattedText);
+           // BaikeManager.Instance.addLinkToAddBaikeItems("a");
             if (accumulateText) m_accumulatedText = subtitleText.text + "\n";
             if (scrollbarEnabler != null && !HasTypewriter())
             {
