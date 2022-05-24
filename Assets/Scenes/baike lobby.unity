@@ -688,6 +688,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7846687926007164935, guid: 046ecafd511f62341bfcbf93b90cf4ea, type: 3}
+      propertyPath: m_Name
+      value: baike content
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333573477787049725, guid: 046ecafd511f62341bfcbf93b90cf4ea, type: 3}
+      propertyPath: m_Name
+      value: baikeMain
+      objectReference: {fileID: 0}
     - target: {fileID: 8476774940842745738, guid: 046ecafd511f62341bfcbf93b90cf4ea, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

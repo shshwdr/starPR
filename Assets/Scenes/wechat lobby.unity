@@ -2187,6 +2187,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5564522063847950482, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564522063847950482, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564522063847950482, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564522063847950482, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564522063847950483, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564522063847950485, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: openBaike
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
 --- !u!1 &2083657388 stripped
@@ -2204,6 +2228,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17d7b7cb85c5ece468a823d129b4813f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2083657390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5564522063847950483, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+  m_PrefabInstance: {fileID: 2083657387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2083657391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2799575166425098708, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+  m_PrefabInstance: {fileID: 2083657387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2083657392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083657391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3639e2a35d9d24db60e5b273eb14ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: showBaike
+  toShow: {fileID: 2083657390}
+--- !u!114 &2083657393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083657390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d03a220c0b1044993b141a4d8968a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2103396486
