@@ -2,6 +2,7 @@ using Pool;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AppButton : MonoBehaviour
 {
@@ -19,7 +20,8 @@ public class AppButton : MonoBehaviour
     public void clickButton()
     {
         //not a good idea. maybe find a way to check after each sentence.
-       // EventPool.Trigger("dialogueConditionChanged");
+        // EventPool.Trigger("dialogueConditionChanged");
+       // GetComponent<Button>().Select();
     }
 
     // Start is called before the first frame update

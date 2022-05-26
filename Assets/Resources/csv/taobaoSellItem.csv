@@ -1,3 +1,3 @@
-﻿name,displayName,description,maxLevel,costBase,costIncrease
-自动涨粉,自动涨粉,每秒自动涨粉,10,100,1.5
-微博小号,微博小号,小号，点赞评论的收益增加,10,100,1.5
+﻿name,displayName,description,maxLevel,costBase,costIncrease,locked,effect
+autoFansIncrease,自动涨粉,每秒自动涨粉{0},10,100,1.5,0,0.3
+weiboOtherAccount,微博小号,开通小号，所有微博的收益增加{0}倍,10,100,1.5,0,1

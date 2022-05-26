@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/baike lobby.unity
     guid: 65edd318967cce64fae879e3307fdcdb
+  - enabled: 1
+    path: Assets/Scenes/taobao lobby.unity
+    guid: 1d79f01ad298faf4ead4c0bc8d40fab6
   m_configObjects: {}

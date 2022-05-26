@@ -16,6 +16,11 @@ public class ResourceManager : Singleton<ResourceManager>
         return Mathf.FloorToInt(resources[ResourceType.fans]);
     }
 
+    public void addFansCountFromWeibo(float addCount)
+    {
+        addFansCount(addCount * TaobaoManager.Instance.weiboRewardMultiplier());
+    }
+
     public void addFansCount(float addCount)
     {
         resources[ResourceType.fans] += addCount;
@@ -53,7 +58,7 @@ public class ResourceManager : Singleton<ResourceManager>
         return Mathf.FloorToInt(resources[ResourceType.money]);
     }
 
-    public bool tryConsumeMoney(float value)
+    public bool tryConsumeMoney(int value)
     {
         if (resources[ResourceType.money] >= value)
         {
@@ -95,11 +100,12 @@ public class ResourceManager : Singleton<ResourceManager>
         {
             currentTime = 0;
             changeMoney(moneyChangePerTick);
+            addFansCount(TaobaoManager.Instance.fansIncreasedPerSecond());
         }
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            addFansCount(1);
+            addFansCountFromWeibo(1);
         }
     }
 }

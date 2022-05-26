@@ -144,6 +144,18 @@ PrefabInstance:
       value: LoadLevel(weibo lobby)
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423291, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.58176094
+      objectReference: {fileID: 0}
+    - target: {fileID: 259123513510423291, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 259123513510423291, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.9978759
+      objectReference: {fileID: 0}
+    - target: {fileID: 259123513510423291, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2083657394}
@@ -173,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_AnchorMin.x
@@ -181,7 +193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_SizeDelta.x
@@ -221,11 +233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 687.5
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423292, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -245,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423293, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
@@ -913,6 +925,18 @@ PrefabInstance:
     - target: {fileID: 259123513510423288, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: sequence
       value: LoadLevel(weibo lobby)
+      objectReference: {fileID: 0}
+    - target: {fileID: 259123513510423291, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.58176094
+      objectReference: {fileID: 0}
+    - target: {fileID: 259123513510423291, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 259123513510423291, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.9978759
       objectReference: {fileID: 0}
     - target: {fileID: 259123513510423291, guid: 5ad2a509f2c4ebf4eba7b15210566f89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2273,6 +2297,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 834419114449687499, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.58176094
+      objectReference: {fileID: 0}
+    - target: {fileID: 834419114449687499, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 834419114449687499, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.9978759
+      objectReference: {fileID: 0}
     - target: {fileID: 834419114449687500, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2292,6 +2328,26 @@ PrefabInstance:
     - target: {fileID: 834419114449687501, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
       propertyPath: m_Name
       value: Weibo Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 2799575164540112640, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.58176094
+      objectReference: {fileID: 0}
+    - target: {fileID: 2799575164540112640, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2799575164540112640, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.9978759
+      objectReference: {fileID: 0}
+    - target: {fileID: 2799575164540112640, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: openWeixin
+      objectReference: {fileID: 0}
+    - target: {fileID: 2799575164540112640, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2799575164540112647, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2413,6 +2469,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4315157629459801673, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.58176094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315157629459801673, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315157629459801673, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.9978759
+      objectReference: {fileID: 0}
     - target: {fileID: 4315157629459801678, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2448,6 +2516,18 @@ PrefabInstance:
     - target: {fileID: 5564522063847950483, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564522063847950485, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.58176094
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564522063847950485, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564522063847950485, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.9978759
       objectReference: {fileID: 0}
     - target: {fileID: 5564522063847950485, guid: 0117d541a87a8ac4a8d37ad89820cd26, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

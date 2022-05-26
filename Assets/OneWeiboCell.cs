@@ -123,7 +123,7 @@ public class OneWeiboCell : MonoBehaviour
             if (weiboInfo.isPositive)
             {
                 //todo how many fans add should be decided somewhere else
-                ResourceManager.Instance.addFansCount(1);
+                ResourceManager.Instance.addFansCountFromWeibo(1);
             }
         }
         else

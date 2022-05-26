@@ -70,7 +70,7 @@ public class WeiboReportMenu : MonoBehaviour,ISelectable
             else if (oneWeibo.weiboSentenceInfo.reportReasons.Contains(currentReportReason))
             {
                 GameObject.FindObjectOfType<WeiboCenterPopup>().addMessage("举报成功");
-                ResourceManager.Instance.addFansCount(10);
+                ResourceManager.Instance.addFansCountFromWeibo(10);
                 oneWeibo.isDisabled = true;
                 oneWeibo.hasReported = true;
                 weiboCell.updateWeiboCell();
