@@ -30,7 +30,16 @@ public class ResourceManager : Singleton<ResourceManager>
         //todo not call everytime
         EventPool.Trigger("dialogueConditionChanged");
     }
+    public bool tryConsumeHP(float value)
+    {
+        if (resources[ResourceType.hp] >= value)
+        {
 
+            consumeHP(value);
+            return true;
+        }
+        return false;
+    }
     public void consumeHP(float value)
     {
 
@@ -42,6 +51,16 @@ public class ResourceManager : Singleton<ResourceManager>
     {
 
         return Mathf.FloorToInt(resources[ResourceType.money]);
+    }
+
+    public bool tryConsumeMoney(float value)
+    {
+        if (resources[ResourceType.money] >= value)
+        {
+            changeMoney(-value);
+            return true;
+        }
+        return false;
     }
 
     public void changeMoney(float value)

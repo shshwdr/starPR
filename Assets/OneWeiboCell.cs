@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -17,6 +17,8 @@ public class OneWeiboCell : MonoBehaviour
     Button likeButton;
     [SerializeField]
     Button deleteButton;
+    [SerializeField]
+    Button reportButton;
 
     [SerializeField]
     GameObject imagePanel;
@@ -26,9 +28,6 @@ public class OneWeiboCell : MonoBehaviour
 
 
     OneWeiboInfo weiboInfo;
-
-    bool hasLiked;
-    bool isLiking = false;
     
 
     public void init(OneWeiboInfo _info)
@@ -42,12 +41,23 @@ public class OneWeiboCell : MonoBehaviour
     {
         likeButton.onClick.AddListener(onLikeButton);
         deleteButton.onClick.AddListener(onDeleteButton);
+        reportButton.onClick.AddListener(onReportButton);
     }
 
     public void OnClickImage()
     {
         MeituManager.Instance.addImage(weiboInfo.image);
         MainMenu.Instance.openMeitu();
+    }
+
+    public void onReportButton()
+    {
+        if (weiboInfo.isDisabled)
+        {
+            return;
+        }
+        GameObject.FindObjectOfType<WeiboReportMenu>(true).gameObject.SetActive(true);
+        GameObject.FindObjectOfType<WeiboReportMenu>(true).init(weiboInfo,this);
     }
     public void updateWeiboCell()
     {
@@ -58,7 +68,7 @@ public class OneWeiboCell : MonoBehaviour
             finalText = finalText.Replace(keyword, "<link>" + keyword + "</link>");
         }
         word.text = finalText;
-        likedCount.text = (weiboInfo.likes + (isLiking ? 1 : 0)).ToString();
+        likedCount.text = (weiboInfo.likes + (weiboInfo.isLiking ? 1 : 0)).ToString();
 
 
         if(weiboInfo.image!=null && weiboInfo.image.Length > 0)
@@ -82,7 +92,7 @@ public class OneWeiboCell : MonoBehaviour
 
             GetComponent<Image>().color = Color.white;
         }
-        if (weiboInfo.isLiking)
+        if (weiboInfo.isLiking || weiboInfo.hasReported)
         {
             likedCount.color = Color.red;
         }
@@ -100,19 +110,25 @@ public class OneWeiboCell : MonoBehaviour
 
     void onLikeButton()
     {
-        //WeiboManager.Instance.removeWeibo(weiboInfo);
-        weiboInfo.isLiking = !weiboInfo.isLiking;
-        if (weiboInfo.isDisabled)
+        if (ResourceManager.Instance.tryConsumeHP(1))
         {
-            return;
+            //WeiboManager.Instance.removeWeibo(weiboInfo);
+            weiboInfo.isLiking = !weiboInfo.isLiking;
+            if (weiboInfo.isDisabled)
+            {
+                return;
+            }
+            weiboInfo.isDisabled = true;
+            updateWeiboCell();
+            if (weiboInfo.isPositive)
+            {
+                //todo how many fans add should be decided somewhere else
+                ResourceManager.Instance.addFansCount(1);
+            }
         }
-        weiboInfo.isDisabled = true;
-        updateWeiboCell();
-        ResourceManager.Instance.consumeHP(1);
-        if (weiboInfo.isPositive)
+        else
         {
-            //todo how many fans add should be decided somewhere else
-            ResourceManager.Instance.addFansCount(1);
+            GameObject.FindObjectOfType<WeiboCenterPopup>().addMessage("体力不足");
         }
 
 

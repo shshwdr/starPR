@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5534123572583766281}
   - component: {fileID: 5534123572583766282}
   - component: {fileID: 5534123572583766283}
+  - component: {fileID: 8603277267328999672}
   m_Layer: 0
   m_Name: WeiboManager
   m_TagString: Untagged
@@ -87,3 +88,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unlockedKeywords: []
   lockedKeywords: []
+--- !u!114 &8603277267328999672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5534123572583766286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d28db723c997cb438561cfb5ef5fad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

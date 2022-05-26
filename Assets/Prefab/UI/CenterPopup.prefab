@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 9164121755651725064}
-  textShowTime: 1
+  textShowTime: 3
 --- !u!1 &9164121754768407685
 GameObject:
   m_ObjectHideFlags: 0

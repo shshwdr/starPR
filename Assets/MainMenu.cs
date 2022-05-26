@@ -45,6 +45,18 @@ public class MainMenu : Singleton<MainMenu>
         changeAppGeneral();
         SceneManager.LoadScene("baike lobby");
     }
+    public void openTaobao()
+    {
+
+        changeAppGeneral();
+        SceneManager.LoadScene("taobao lobby");
+    }
+    public void openMusic()
+    {
+
+        changeAppGeneral();
+        SceneManager.LoadScene("music lobby");
+    }
 
     // Update is called once per frame
     void Update()

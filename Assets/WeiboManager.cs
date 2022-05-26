@@ -14,8 +14,8 @@ public class OneWeiboInfo
     public List<string> keywords;
     public string image;
     public bool isLiking;
+    public bool hasReported;
     public bool isDisabled;
-
 }
 
 public class WeiboManager : Singleton<WeiboManager>

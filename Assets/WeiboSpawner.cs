@@ -7,6 +7,7 @@ public class WeiboSentenceInfo {
     public int isPositive;
     public string image;
     public int isNegative;
+    public List<string> reportReasons;
 }
 
 
